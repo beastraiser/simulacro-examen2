@@ -41,23 +41,15 @@ body {
   display: none;
 }
 
-.sub-menu.show {
-  display: flex;
-}
-
-.arrow-rotate {
+.arrow.rotate {
   margin-left: auto;
   transition: transform 0.3s ease; /* Transición para la rotación de la flecha */
 }
 
-.arrow-rotate {
+.arrow.rotate {
   transform: rotate(90deg);
 }
-
-.arrow {
-  margin-left: auto;
-}
-/* Resto del código es el mismo */
+/* Cambio! en vez de crear un clase para el padre de las flechas, se crea un clase que sea aplica directamente a las flechas */
 
 .sub-menu {
   display: none;
@@ -68,17 +60,15 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el submenú */
 }
 
-.sub-menu.show {
-  display: flex;
+.sub-menu.show,
+.sub-menu-item {
+  display: flex; /* Cambio! para que la flecha del nested menú funcione hay que convertir a los padres de cada flecha en flex */
 }
 
 .sub-menu-item {
   margin-bottom: 5px;
   cursor: pointer;
   padding: 8px; /* Añade un espacio interno al submenú item */
-}
-.sub-menu-item.expanded {
-  display: flex;
 }
 
 .sub-menu-item:hover {
